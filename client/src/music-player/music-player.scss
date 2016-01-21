@@ -1,0 +1,172 @@
+@import './song-component/song-component';
+@import './sort-component/sort-component';
+@font-face {
+	font-family: 'Lato';
+	src: url(../fonts/lato/lato-regular.eot);
+	src: url(../fonts/lato/lato-regular.eot?#iefix) format('embedded-opentype'), url(../fonts/lato/lato-regular.woff) format('woff'), url(../fonts/lato/lato-regular.ttf) format('truetype'), url(../fonts/lato/lato-regular.svg#latoregular) format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+music-player {
+	display: block;
+	font-family: 'Lato';
+	.front__panel {}
+	.front__panel {
+		.panel__top {
+			height: 100px;
+			background-color: #ECF0F1;
+		}
+		.panel__middle {
+			height: 100px;
+			background-color: #BDC3C7;
+		}
+		.panel__bottom {
+			background-color: #ECF0F1;
+		}
+	}
+	.panel__top {
+		.left__buttons,
+		.song__informations {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.left__buttons {
+			width: 15%;
+		}
+		.song__informations {
+			width: 70%;
+			text-align: center;
+			.song__artist,
+			.song__name {
+				margin: 0;
+			}
+			.song__artist {
+				font-size: 18px;
+				margin-bottom: 0.25em;
+			}
+			.song__name {}
+		}
+		.right__buttons {
+			width: 15%;
+		}
+		&:not(:first-child) {
+			margin-left: -4px;
+		}
+	}
+	.panel__middle {
+		text-align: center;
+		.media__controls {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.media__controls {
+			.media__control {
+				display: inline-block;
+				vertical-align: middle;
+				text-align: left;
+				.material-icons {
+					font-size: 12px;
+					&.medium {
+						font-size: 2em;
+					}
+					&.large {
+						font-size: 3em;
+					}
+				}
+				/**
+				 * Spread out the next / previous play buttons
+				 */
+				&.play-pause__buttons {
+					margin: 0 3em;
+				}
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.sort__container {
+		text-align: center;
+		background-color: #ECF0F1;
+		sort-component {
+			display: inline-block;
+			vertical-align: middle;
+			/**
+			 * Remove the spacing introduced by the inline-blocks for all sort-components but the first one
+			 */
+			&:not(:first-child) {
+				margin-left: -4px;
+			}
+		}
+	}
+	.songs__playlist {
+		/**
+		 * Fitting two songs at a time, 2 * 165px
+		 */
+		height: 330px;
+		overflow-y: scroll;
+	}
+	.panel__bottom {
+		padding: 0.5em;
+		.current__time,
+		.current__position,
+		.remaining__time {
+			display: inline-block;
+			text-align: center;
+		}
+		.current__time {
+			width: 15%;
+			margin: 0;
+		}
+		.current__position {
+			position: relative;
+			width: 70%;
+			height: 25px;
+			margin-left: -4px;
+			.progress__bar,
+			.progress__background {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				border-radius: 5px;
+			}
+			.progress__bar {
+				background-color: #16a085;
+			}
+			.progress__background {
+				width: 100%;
+				background-color: #BDC3C7;
+			}
+		}
+		.remaining__time {
+			width: 15%;
+			margin: 0 0 0 -4px;
+		}
+	}
+}
+
+
+/**
+ * Helper classes
+ */
+
+.align-children--vertically {
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+}
+
+.prevent-highlighting {
+	*,
+	*:before,
+	*:after {
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+	}
+}

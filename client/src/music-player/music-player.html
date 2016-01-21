@@ -1,0 +1,54 @@
+<div class="front__panel prevent-highlighting">
+	<div class="panel__top align-children--vertically">
+		<div class="left__buttons">
+			<!-- Thinking of adding some additional control buttons here -->
+		</div>
+		<div class="song__informations">
+			<h3 class="song__artist">
+				{{playingSong.metadata.artist}}
+			</h3>
+			<h5 class="song__name">
+				{{playingSong.metadata.name}}
+			</h5>
+		</div>
+	</div>
+	<div class="panel__middle align-children--vertically">
+		<div class="media__controls">
+			<div class="previous__button media__control" ng-click="playPreviousSong()">
+				<i class="medium material-icons">skip_previous</i>
+			</div>
+			<div class="play-pause__buttons media__control">
+				<div class="play__button" ng-click="genericPlayPause()" ng-if="!playingSong.audio || playingSong.audio.paused">
+					<i class="large material-icons">play_arrow</i>
+				</div>
+				<div class="pause__button media__control" ng-click="pauseCurrentSong()" ng-if="playingSong.audio && !playingSong.audio.paused">
+					<i class="large material-icons">pause</i>
+				</div>
+			</div>
+			<div class="next__button media__control" ng-click="playNextSong()">
+				<i class="medium material-icons">skip_next</i>
+			</div>
+		</div>
+	</div>
+	<div class="songs__playlist">
+		<song-component ng-repeat="song in songs track by song.id" song="song">
+		</song-component>
+	</div>
+	<div class="sort__container">
+		<sort-component sort-by="artist" sort-label="Artist"></sort-component>
+		<sort-component sort-by="name" sort-label="Song name"></sort-component>
+	</div>
+	<div class="panel__bottom" ng-show="playingSong.metadata">
+		<h3 class="current__time">
+			{{playingSong.metadata.songPosition}}
+		</h3>
+		<div class="current__position align-children--vertically">
+			<div class="progress__background"></div>
+			<div class="progress__bar" ng-style="{'width': playingSong.metadata.songProgress + '%'}">
+			</div>
+		</div>
+		<h3 class="remaining__time">
+			{{playingSong.metadata.songLengthRemaining}}
+		</h3>
+	</div>
+</div>

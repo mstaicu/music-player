@@ -1,0 +1,22 @@
+{
+  "name": "music-player",
+  "description": "Serving songs for the masses",
+  "main": "./build/app-bundle.js",
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.8",
+    "normalize-css": "normalize.css#~3.0.3",
+    "angular-mocks": "~1.4.8",
+    "angular-resource": "~1.4.8"
+  }
+}

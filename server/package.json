@@ -1,0 +1,14 @@
+{
+	"name": "music-server",
+	"version": "1.0.0",
+	"description": "Serving songs for the masses",
+	"main": "server.js",
+	"scripts": {
+
+	},
+	"author": "mstaicu",
+	"license": "ISC",
+	"dependencies": {
+		"hapi": "^12.1.0"
+	}
+}

@@ -1,0 +1,60 @@
+song-component {
+	display: block;
+	/**
+	 * Making this height static, for now
+	 */
+	height: 165px;
+	padding: 2em;
+	font-size: 12px;
+	background-color: #ECF0F1;
+	&:hover {
+		background-color: #BDC3C7;
+	}
+	.front__panel {
+		height: 100%;
+		.media__controls,
+		.information__container {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.media__controls {
+			width: 70%;
+			text-align: center;
+			.media__control {
+				.material-icons {
+					font-size: 12px;
+					&.large {
+						font-size: 2em;
+					}
+				}
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+		.information__container {
+			width: 15%;
+			margin-left: -4px;
+			.artist__container {
+				margin-bottom: 5px;
+				.artist__name {
+					margin: 0;
+				}
+			}
+			.song__container {
+				.song__name {
+					margin: 0;
+				}
+			}
+		}
+	}
+}
+
+.vertical-align-children {
+	&:before {
+		content: '';
+		display: inline-block;
+		vertical-align: middle;
+		height: 100%;
+	}
+}

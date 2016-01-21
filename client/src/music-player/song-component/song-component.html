@@ -1,0 +1,24 @@
+<div class="front__panel vertical-align-children">
+	<div class="media__controls">
+		<div class="play-pause__buttons media__control">
+			<div class="play__button" ng-click="playSong()" ng-if="!song.isPlaying">
+				<i class="large material-icons">play_arrow</i>
+			</div>
+			<div class="pause__button media__control" ng-click="pauseSong()" ng-if="song.isPlaying">
+				<i class="large material-icons">pause</i>
+			</div>
+		</div>
+	</div>
+	<div class="information__container">
+		<div class="artist__container">
+			<h3 class="artist__name">
+				{{song.artist}}
+			</h3>
+		</div>
+		<div class="song__container">
+			<h5 class="song__name">
+				{{song.name}}
+			</h5>
+		</div>
+	</div>
+</div>

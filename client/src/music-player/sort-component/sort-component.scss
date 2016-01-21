@@ -1,0 +1,25 @@
+sort-component {
+	display: block;
+	.sort__button {
+		.sort__label,
+		.sort__icon {
+			display: inline-block;
+			vertical-align: middle;
+		}
+		.sort__label {
+			margin: 0;
+		}
+		.sort__icon {
+			margin-left: -4px;
+		}
+		.material-icons {
+			font-size: 12px;
+			&.large {
+				font-size: 2em;
+			}
+		}
+	}
+	&:hover {
+		cursor: pointer;
+	}
+}
