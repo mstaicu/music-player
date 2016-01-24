@@ -2,6 +2,10 @@
 
 A component which fetches and plays songs
 
+## Preview
+
+![Music player preview](https://raw.githubusercontent.com/mstaicu/music-player/master/preview-music-player.gif)
+
 ## Installation
 
 1. Make sure you have npm installed
